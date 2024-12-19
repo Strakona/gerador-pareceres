@@ -1,0 +1,132 @@
+:root {
+    --primary-color: #4CAF50;
+    --primary-light: #81C784;
+    --primary-dark: #388E3C;
+    --white: #FFFFFF;
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--gray-100);
+}
+
+.main-content {
+    padding-top: 6rem;
+    min-height: 100vh;
+}
+
+/* Botões */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Upload Box */
+.upload-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.upload-box {
+    border: 2px dashed var(--gray-300);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--white);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.upload-box:hover {
+    border-color: var(--primary-color);
+    background-color: var(--gray-100);
+}
+
+.upload-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Formulários */
+.form-control, .form-select {
+    border-radius: 8px;
+    border: 1px solid var(--gray-300);
+    padding: 0.75rem;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.25);
+}
+
+/* Cards de Parecer */
+.report-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.report-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.page {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .main-content {
+        padding-top: 4rem;
+    }
+
+    .upload-box {
+        padding: 1rem;
+    }
+
+    .btn-lg {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+}
+
+/* Progress Bar */
+.progress {
+    height: 0.5rem;
+    border-radius: 1rem;
+    background-color: var(--gray-200);
+}
+
+.progress-bar {
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+/* Mensagens de Feedback */
+.alert {
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    animation: fadeIn 0.3s ease-in-out;
+} 

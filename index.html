@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Pareceres</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Página Inicial -->
+    <div class="page" id="home-page">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">Gerador de Pareceres</a>
+            </div>
+        </nav>
+
+        <main class="container main-content text-center">
+            <h1 class="display-4 mb-4">Gerador de Pareceres</h1>
+            <p class="lead mb-5">Automatize a criação de pareceres escolares de forma simples e eficiente</p>
+            <button id="start-btn" class="btn btn-primary btn-lg">Começar</button>
+        </main>
+    </div>
+
+    <!-- Página de Upload -->
+    <div class="page d-none" id="upload-page">
+        <div class="container main-content">
+            <h2 class="mb-4">Upload de Dados</h2>
+            <div class="upload-container">
+                <div class="upload-box">
+                    <input type="file" id="file-upload" class="d-none" accept=".csv,.xlsx,.xls">
+                    <label for="file-upload" class="upload-label">
+                        <div class="upload-icon">📁</div>
+                        <span>Clique para fazer upload da tabela</span>
+                        <small class="d-block mt-2">Formatos aceitos: CSV, Excel (.xlsx, .xls)</small>
+                    </label>
+                </div>
+                <div id="preview-container" class="mt-4 d-none">
+                    <h3>Prévia dos Dados</h3>
+                    <div class="table-responsive">
+                        <table class="table" id="preview-table">
+                            <!-- Dados serão inseridos aqui via JavaScript -->
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página do Questionário -->
+    <div class="page d-none" id="form-page">
+        <div class="container main-content">
+            <h2 class="mb-4">Questionário de Avaliação</h2>
+            <form id="evaluation-form">
+                <div class="mb-3">
+                    <label for="student-select" class="form-label">Selecione o Aluno</label>
+                    <select class="form-select" id="student-select" required>
+                        <!-- Opções serão preenchidas via JavaScript -->
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="behavior" class="form-label">Como você avalia o comportamento do aluno?</label>
+                    <select class="form-select" id="behavior" required>
+                        <option value="">Selecione uma opção</option>
+                        <option value="excelente">Excelente</option>
+                        <option value="bom">Bom</option>
+                        <option value="regular">Regular</option>
+                        <option value="precisa-melhorar">Precisa Melhorar</option>
+                    </select>
+                    <textarea class="form-control mt-2" placeholder="Comentários adicionais"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="academic" class="form-label">Como foi o desempenho acadêmico?</label>
+                    <select class="form-select" id="academic" required>
+                        <option value="">Selecione uma opção</option>
+                        <option value="excelente">Excelente</option>
+                        <option value="bom">Bom</option>
+                        <option value="regular">Regular</option>
+                        <option value="precisa-melhorar">Precisa Melhorar</option>
+                    </select>
+                    <textarea class="form-control mt-2" placeholder="Comentários adicionais"></textarea>
+                </div>
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-primary" name="action" value="next">Salvar e Próximo Aluno</button>
+                    <button type="submit" class="btn btn-success" name="action" value="finish">Salvar e Encerrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Página de Geração de Pareceres -->
+    <div class="page d-none" id="results-page">
+        <div class="container main-content">
+            <h2 class="mb-4">Pareceres Gerados</h2>
+            <div class="progress mb-4">
+                <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+            </div>
+            <div id="reports-container">
+                <!-- Pareceres serão inseridos aqui via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html> 
